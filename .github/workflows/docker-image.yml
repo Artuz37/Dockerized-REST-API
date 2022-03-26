@@ -37,7 +37,7 @@ jobs:
     - name: Run tests with pytest
       run: pytest 
     - name: Push to Docker Hub
-      run: docker push ${{ secrets.DOCKER_USERNAME }}/predictor-api:tagname
+      run: docker push artuz37/predictor-api:latest
       
     
 
