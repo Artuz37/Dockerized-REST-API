@@ -3,7 +3,7 @@ import requests
 
 
 def test_hotdog():
-  r = requests.post('http://0.0.0.1:8000/predict', json={
+  r = requests.post('http://0.0.0.0:8000/predict', json={
     "img_url": "https://img.wprost.pl/img/hot-dog/07/04/19f55c7a40414dd770057f122818.jpeg"
   })
   print(r.json())
@@ -11,7 +11,7 @@ def test_hotdog():
 
 
 def test_wrong_url():
-  r = requests.post('http://0.0.0.1:8000/predict', json={
+  r = requests.post('http://0.0.0.0:8000/predict', json={
     "img_url": "hot-dog"
   })
 
