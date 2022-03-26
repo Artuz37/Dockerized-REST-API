@@ -24,7 +24,7 @@ jobs:
     - name: Build, run, test and push the Docker image
       run: |
             docker build . --file Dockerfile --tag ${{secrets.DOCKER_USERNAME}}/predictor-api:latest
-            docker run -d -p 8000:8000 predictor-api:latest
+            docker run -d -p 8000:8000 ${{secrets.DOCKER_USERNAME}}/predictor-api:latest
             
     - name: Install Python 3
       uses: actions/setup-python@v1
