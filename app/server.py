@@ -14,21 +14,13 @@ model = ClassificationModel('classifier/models/better_model.pth')
 class ImgRequest(BaseModel):
     img_url: str
 
-    class Config:
-        schema_extra = {
-            "examples": {
-                "Hotdog picture":{"img_url": "https://img.wprost.pl/img/hot-dog/07/04/19f55c7a40414dd770057f122818.jpeg"},
-                "Not a hotdog picture": {
-                    "img_url": "https://img.wprost.pl/img/hot-dog/07/04/19f55c7a40414dd770057f122818.jpeg"}
-            }
-        }
 
 
 @app.get("/")
 def home():
     return {'data' : 'hej'}
 
-@app.post("/classify")
+@app.post("/predict")
 def classify(request: ImgRequest=Body(
         ...,
         examples={
